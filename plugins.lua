@@ -47,6 +47,119 @@ local plugins = {
     end,
   },
 
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({})
+    end
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "VeryLazy",
+    opts = {}
+  },
+
+  {
+    "APZelos/blamer.nvim",
+    branch = "master",
+    event = "VeryLazy",
+    init = function()
+      vim.g.blamer_enabled = 1
+      vim.g.blamer_delay = 500
+      vim.g.blamer_prefix = '    '
+      vim.g.blamer_date_format = "%Y/%m/%d"
+      vim.g.blamer_relative_time = 1
+    end,
+  },
+
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    cmd = "LazyGit",
+  },
+
+  {
+    "subnut/nvim-ghost.nvim",
+    tag = "0.5.2",
+    cmd = "GhostTextStart",
+    init = function()
+      vim.g.nvim_ghost_autostart = 0
+    end
+  },
+
+  {
+    "linux-cultist/venv-selector.nvim",
+    event = 'VeryLazy',
+    opts = {
+      pipenv_path = "."
+    },
+  },
+
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    version = "*",
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump({
+            search = {
+              mode = function(str)
+                return "\\<" .. str
+              end,
+            },
+            label = {
+              uppercase = false,
+            },
+            autojump = true,
+          })
+        end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+      {
+        "R",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Flash Treesitter Search",
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
+    },
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
