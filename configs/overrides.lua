@@ -12,6 +12,7 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "python",
   },
   indent = {
     enable = true,
@@ -34,16 +35,24 @@ M.mason = {
     "deno",
     "prettier",
 
+    -- python
+    "pyright",
+    "black",
+
     -- c/cpp stuff
     "clangd",
     "clang-format",
   },
 }
 
--- git support in nvimtree
 M.nvimtree = {
   git = {
     enable = true,
+    ignore = false,
+  },
+
+  view = {
+    side = "right",
   },
 
   renderer = {
