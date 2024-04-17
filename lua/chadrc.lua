@@ -5,7 +5,10 @@
 local M = {}
 
 M.ui = {
-	theme = "onedark",
+	theme = "nightowl",
+  -- transparency = true,
+
+  telescope = { style = "bordered" },
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },
