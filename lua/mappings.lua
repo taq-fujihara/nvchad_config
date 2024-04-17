@@ -17,10 +17,10 @@ map("n", "<leader>j", "*``cgn", { desc = "Replace word under cursor" })
 map("n", "|", "<cmd> vsplit <CR>", { desc = "Split Pane Vertically" })
 map("n", "-", "<cmd> split <CR>", { desc = "Split Pane Horizontally" })
 
-map("n", "gt", function() require("nvchad.tabufline").tabuflineNext() end, { desc = "Goto next buffer" })
-map("n", "gT", function() require("nvchad.tabufline").tabuflinePrev() end, { desc = "Goto previous buffer" })
+map("n", "gt", function() require("nvchad.tabufline").next() end, { desc = "Goto next buffer" })
+map("n", "gT", function() require("nvchad.tabufline").prev() end, { desc = "Goto previous buffer" })
 
 map("n", "<leader>gg", "<cmd> LazyGit <CR>", { desc = "LazyGit" })
 
-map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle nvimtree" })
-map("n", "<leader>o", "<cmd> NvimTreeFocus <CR>", { desc = "Focus nvimtree" })
+map("n", "<leader>e", "<cmd> NvimTreeToggle <CR>", { desc = "Toggle tree" })
+map("n", "<leader>o", "<cmd> NvimTreeFocus <CR>", { desc = "Focus tree" })
