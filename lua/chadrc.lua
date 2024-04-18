@@ -5,8 +5,8 @@
 local M = {}
 
 M.ui = {
-	theme = "nightowl",
-  -- transparency = true,
+	theme = "catppuccin",
+  transparency = true,
 
   telescope = { style = "bordered" },
 
